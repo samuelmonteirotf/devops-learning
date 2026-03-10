@@ -16,3 +16,10 @@ Para este projeto, utilizamos as seguintes práticas:
 2. **Commits**: Histórico de commits claro, seguindo convenções (ex: `feat:`, `test:`, `docs:`, `ci:`).
 3. **Pull Requests (PR)**: Integração do código via PR para a branch `main`, garantindo revisão e execução prévia da pipeline de CI.
 4. **CI/CD com GitHub Actions**: Os testes definidos com `pytest` rodam automaticamente a cada push ou PR.
+
+## CI/CD
+
+This project uses GitHub Actions to implement:
+
+- Continuous Integration (CI) with automated tests using pytest
+- Continuous Delivery (CD) by packaging the project as a build artifact
