@@ -19,6 +19,6 @@ Para este projeto, utilizamos as seguintes práticas:
 
 ## Pipelines de CI/CD
 
-Este projeto utiliza fluxos (workflows) separados no GitHub Actions:
-- **Build (CI)**: Pipeline configurada em `build.yml` responsável por validar o código rodando testes automatizados com `pytest`.
-- **Deploy (CD)**: Pipeline configurada em `deploy.yml` responsável por preparar o empacotamento da aplicação e publicá-lo como um artefato `.zip` (`devops-learning-artifact`).
+Este projeto utiliza um fluxo (workflow) contínuo no GitHub Actions (`build-and-deploy.yml`) dividido em dois *jobs*:
+- **Build (CI)**: Responsável por validar o código rodando testes automatizados com `pytest`.
+- **Deploy (CD)**: Executado logo após o *Build* ser bem-sucedido, é responsável por empacotar a aplicação e publicá-la como um artefato `.zip` (`devops-learning-artifact`).
