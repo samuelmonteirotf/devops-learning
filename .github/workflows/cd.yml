@@ -1,0 +1,32 @@
+name: CD
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deliver:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Criar diretório de build
+        run: mkdir -p dist
+
+      - name: Empacotar projeto
+        run: zip -r dist/devops-learning.zip app.py README.md requirements.txt tests .github
+
+      - name: Publicar artefato
+        uses: actions/upload-artifact@v4
+        with:
+          name: devops-learning-artifact
+          path: dist/devops-learning.zip
