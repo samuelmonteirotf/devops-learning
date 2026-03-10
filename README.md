@@ -16,3 +16,29 @@ Para este projeto, utilizamos as seguintes práticas:
 2. **Commits**: Histórico de commits claro, seguindo convenções (ex: `feat:`, `test:`, `docs:`, `ci:`).
 3. **Pull Requests (PR)**: Integração do código via PR para a branch `main`, garantindo revisão e execução prévia da pipeline de CI.
 4. **CI/CD com GitHub Actions**: Os testes definidos com `pytest` rodam automaticamente a cada push ou PR.
+
+## Docker
+
+Este projeto pode ser executado em um container Docker.
+
+### Build da imagem
+
+```bash
+docker build -t devops-learning .
+```
+
+### Rodar o container
+
+```bash
+docker run -d -p 8000:8000 --name devops-learning-container devops-learning
+```
+
+### Acessar a aplicação
+
+Após subir o container, acesse:
+
+```
+http://localhost:8000/
+```
+
+A resposta será um JSON confirmando que a aplicação está rodando no Docker.
